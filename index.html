@@ -1,196 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mishu Creation | Digital Invitation & Design</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Mishu Creation | Digital Invitation & Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fb;
-      color: #333;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #333;
+}
 
-    header {
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+header p {
+  font-size: 18px;
+}
 
-    header h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
+/* SECTIONS */
+section {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
 
-    header p {
-      font-size: 18px;
-      opacity: 0.95;
-    }
+/* SERVICES */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.card h3 {
+  color: #2575fc;
+}
 
-    section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+/* PORTFOLIO */
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.portfolio img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.more {
+  display: none;
+}
 
-    .section-title {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 40px;
-      color: #222;
-    }
+/* BUTTON */
+#viewMoreBtn {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  background: #2575fc;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+/* CTA */
+.cta {
+  background: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+.cta a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 18px;
+}
 
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      text-align: center;
-    }
+/* FOOTER */
+footer {
+  background: #222;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
 
-    .card h3 {
-      margin-bottom: 10px;
-      color: #2575fc;
-    }
-
-    /* PORTFOLIO */
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .portfolio img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-
-    .more {
-      display: none;
-    }
-
-    #viewMoreBtn {
-      margin: 30px auto 0;
-      display: block;
-      padding: 12px 30px;
-      border: none;
-      border-radius: 25px;
-      background: #2575fc;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .cta {
-      background: #ffffff;
-      text-align: center;
-      padding: 40px 20px;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-
-    .cta a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-size: 18px;
-    }
-
-    footer {
-      background: #222;
-      color: #aaa;
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-    }
-  </style>
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+.lightbox span {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <header>
-    <h1>Mishu Creation</h1>
-    <p>Digital Invitation • Greeting Cards • Creative Design</p>
-  </header>
+<!-- HERO -->
+<header>
+  <h1>Mishu Creation</h1>
+  <p>Digital Invitation • Greeting Cards • Creative Design</p>
+</header>
 
-  <!-- SERVICES -->
-  <section>
-    <h2 class="section-title">Our Services</h2>
-    <div class="services">
-      <div class="card">
-        <h3>Digital Invitation</h3>
-        <p>Birthday, Wedding, Engagement & all event invitations.</p>
-      </div>
-      <div class="card">
-        <h3>Greeting Cards</h3>
-        <p>Festival, Anniversary & Custom greeting designs.</p>
-      </div>
-      <div class="card">
-        <h3>Poster Design</h3>
-        <p>Business, Social Media & Promotional posters.</p>
-      </div>
+<!-- SERVICES -->
+<section>
+  <h2 class="section-title">Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Digital Invitation</h3>
+      <p>Birthday, Wedding, Engagement & all event invitations.</p>
     </div>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section>
-    <h2 class="section-title">Portfolio</h2>
-
-    <div class="portfolio">
-      <img src="poster1.png">
-      <img src="poster2.png">
-      <img src="poster3.png">
-      <img src="poster4.png">
-
-      <img class="more" src="poster5.png">
-      <img class="more" src="poster6.png">
-      <img class="more" src="poster7.png">
-      <img class="more" src="poster8.png">
+    <div class="card">
+      <h3>Greeting Cards</h3>
+      <p>Festival, Anniversary & Custom greeting designs.</p>
     </div>
-
-    <button id="viewMoreBtn" onclick="showMore()">View More</button>
-  </section>
-
-  <!-- CONTACT -->
-  <section>
-    <div class="cta">
-      <h2>Ready to Order?</h2>
-      <p>Contact us directly on WhatsApp for quick response.</p>
-      <a href="https://wa.me/917908928892" target="_blank">
-        Chat on WhatsApp
-      </a>
+    <div class="card">
+      <h3>Poster Design</h3>
+      <p>Business, Social Media & Promotional posters.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Mishu Creation | All Rights Reserved
-  </footer>
+<!-- PORTFOLIO -->
+<section>
+  <h2 class="section-title">Portfolio</h2>
 
-  <script>
-    function showMore() {
-      const moreImages = document.querySelectorAll('.more');
-      moreImages.forEach(img => img.style.display = 'block');
-      document.getElementById('viewMoreBtn').style.display = 'none';
-    }
-  </script>
+  <div class="portfolio">
+    <img src="poster1.png" onclick="openLightbox(this.src)">
+    <img src="poster2.png" onclick="openLightbox(this.src)">
+    <img src="poster3.png" onclick="openLightbox(this.src)">
+    <img src="poster4.png" onclick="openLightbox(this.src)">
+
+    <img class="more" src="poster5.png" onclick="openLightbox(this.src)">
+    <img class="more" src="poster6.png" onclick="openLightbox(this.src)">
+    <img class="more" src="poster7.png" onclick="openLightbox(this.src)">
+    <img class="more" src="poster8.png" onclick="openLightbox(this.src)">
+  </div>
+
+  <button id="viewMoreBtn" onclick="showMore()">View More</button>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="cta">
+    <h2>Ready to Order?</h2>
+    <p>Contact us directly on WhatsApp for quick response.</p>
+    <a href="https://wa.me/917908928892" target="_blank">Chat on WhatsApp</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 Mishu Creation | All Rights Reserved
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span onclick="closeLightbox()">×</span>
+  <img id="lightboxImg">
+</div>
+
+<script>
+function showMore() {
+  document.querySelectorAll('.more').forEach(img => img.style.display = 'block');
+  document.getElementById('viewMoreBtn').style.display = 'none';
+}
+
+function openLightbox(src) {
+  document.getElementById("lightboxImg").src = src;
+  document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
 
 </body>
 </html>
