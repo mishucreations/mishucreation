@@ -91,6 +91,33 @@ section{
   cursor:pointer;
 }
 
+/* PRICING */
+.pricing{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.price-card{
+  background:#fff;
+  padding:35px;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,.1);
+  text-align:center;
+}
+.price-card h3{color:#1c2233}
+.price{
+  font-size:34px;
+  font-weight:bold;
+  margin:15px 0;
+}
+.price-card ul{
+  list-style:none;
+  padding:0;
+}
+.price-card li{
+  margin:8px 0;
+}
+
 /* CONTACT */
 .contact-form{
   background:#fff;
@@ -201,6 +228,41 @@ footer{
     <img class="more" src="poster8.png" onclick="openImg(this.src)">
   </div>
   <button id="viewMore" onclick="showMore()">View More</button>
+</section>
+
+<section>
+  <h2 class="section-title">Pricing</h2>
+  <div class="pricing">
+    <div class="price-card">
+      <h3>Basic</h3>
+      <div class="price">₹299</div>
+      <ul>
+        <li>1 Design</li>
+        <li>Basic Customization</li>
+        <li>Normal Delivery</li>
+      </ul>
+    </div>
+
+    <div class="price-card">
+      <h3>Standard</h3>
+      <div class="price">₹599</div>
+      <ul>
+        <li>3 Designs</li>
+        <li>Premium Look</li>
+        <li>Fast Delivery</li>
+      </ul>
+    </div>
+
+    <div class="price-card">
+      <h3>Premium</h3>
+      <div class="price">₹999</div>
+      <ul>
+        <li>Unlimited Revision</li>
+        <li>All File Formats</li>
+        <li>Priority Support</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <section>
