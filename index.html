@@ -5,8 +5,8 @@
 <title>Mishu Creation | Digital Invitation & Creative Design</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mishu Creation offers digital invitations, greeting cards, poster designs and creative branding.">
-<meta name="keywords" content="digital invitation, wedding invitation, greeting card, poster design, graphic design">
+<meta name="description" content="Mishu Creation offers digital invitations, greeting cards and poster designs.">
+<meta name="keywords" content="digital invitation, wedding invitation, greeting card, poster design">
 <meta name="author" content="Mishu Creation">
 
 <meta name="google-site-verification" content="tXK9s2bwyPjZcWzfq38cvc6J3NqHHa0XPB13oFX2Ng">
@@ -30,7 +30,7 @@ header{
   padding:90px 20px;
 }
 header img{height:90px;margin-bottom:15px}
-header h1{margin:0;font-size:38px;letter-spacing:1px}
+header h1{margin:0;font-size:38px}
 header p{opacity:.85}
 
 /* SECTION */
@@ -42,7 +42,7 @@ section{
 .section-title{
   text-align:center;
   font-size:32px;
-  margin-bottom:45px;
+  margin-bottom:40px;
 }
 
 /* SERVICES */
@@ -91,41 +91,14 @@ section{
   cursor:pointer;
 }
 
-/* PRICING */
-.pricing{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-.price-card{
-  background:#fff;
-  padding:35px;
-  border-radius:18px;
-  box-shadow:0 12px 30px rgba(0,0,0,.1);
-  text-align:center;
-}
-.price-card h3{color:#1c2233}
-.price{font-size:32px;font-weight:bold;margin:15px 0}
-.price-card ul{list-style:none;padding:0}
-.price-card li{margin:8px 0}
-
-/* TESTIMONIAL */
-.testimonial{
-  background:#fff;
-  padding:45px;
-  border-radius:18px;
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
-  text-align:center;
-}
-.testimonial p{font-style:italic}
-.stars{color:gold;font-size:20px}
-
 /* CONTACT */
 .contact-form{
   background:#fff;
   padding:45px;
   border-radius:18px;
   box-shadow:0 12px 30px rgba(0,0,0,.1);
+  max-width:600px;
+  margin:auto;
 }
 .contact-form input,
 .contact-form textarea{
@@ -140,9 +113,10 @@ section{
   padding:14px;
   border:none;
   border-radius:30px;
-  background:#1c2233;
+  background:#25D366;
   color:#fff;
-  font-size:16px;
+  font-size:18px;
+  cursor:pointer;
 }
 
 /* FOOTER */
@@ -154,7 +128,7 @@ footer{
   margin-top:70px;
 }
 
-/* WHATSAPP */
+/* WHATSAPP FLOAT */
 .whatsapp{
   position:fixed;
   bottom:20px;
@@ -230,40 +204,12 @@ footer{
 </section>
 
 <section>
-  <h2 class="section-title">Pricing</h2>
-  <div class="pricing">
-    <div class="price-card">
-      <h3>Basic</h3>
-      <div class="price">₹199</div>
-      <ul><li>1 Design</li><li>Basic Customization</li></ul>
-    </div>
-    <div class="price-card">
-      <h3>Standard</h3>
-      <div class="price">₹449</div>
-      <ul><li>3 Designs</li><li>Premium Look</li></ul>
-    </div>
-    <div class="price-card">
-      <h3>Premium</h3>
-      <div class="price">₹799</div>
-      <ul><li>Unlimited Revision</li><li>Fast Delivery</li></ul>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="testimonial">
-    <p>"Beautiful designs, fast service & very professional."</p>
-    <div class="stars">★★★★★</div>
-  </div>
-</section>
-
-<section>
   <h2 class="section-title">Contact Us</h2>
   <div class="contact-form">
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea rows="4" placeholder="Your Message"></textarea>
-    <button>Send Message</button>
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" rows="4" placeholder="Your Message"></textarea>
+    <button onclick="sendWhatsApp()">Send Message on WhatsApp</button>
   </div>
 </section>
 
@@ -283,12 +229,26 @@ function showMore(){
   document.querySelectorAll('.more').forEach(i=>i.style.display='block');
   document.getElementById('viewMore').style.display='none';
 }
+
 function openImg(src){
   document.getElementById('lightbox').style.display='flex';
   document.getElementById('lightboxImg').src=src;
 }
 function closeImg(){
   document.getElementById('lightbox').style.display='none';
+}
+
+function sendWhatsApp(){
+  var name=document.getElementById("name").value;
+  var email=document.getElementById("email").value;
+  var message=document.getElementById("message").value;
+
+  var text=
+    "Name: "+name+"%0A"+
+    "Email: "+email+"%0A"+
+    "Message: "+message;
+
+  window.open("https://wa.me/917908928892?text="+text,"_blank");
 }
 </script>
 
