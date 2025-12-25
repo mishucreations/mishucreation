@@ -138,12 +138,22 @@
   <!-- PORTFOLIO -->
   <section>
     <h2 class="section-title">Portfolio</h2>
-    <div class="portfolio">
-      <div>Your Design 1</div>
-      <div>Your Design 2</div>
-      <div>Your Design 3</div>
-      <div>Your Design 4</div>
-    </div>
+
+<div class="portfolio-grid">
+  <!-- First 4 visible -->
+  <img src="design1.png">
+  <img src="design2.png">
+  <img src="design3.png">
+  <img src="design4.png">
+
+  <!-- Hidden images -->
+  <img class="more" src="design5.png">
+  <img class="more" src="design6.png">
+  <img class="more" src="design7.png">
+  <img class="more" src="design8.png">
+</div>
+
+<button onclick="showMore()" id="viewMoreBtn">View More</button>
   </section>
 
   <!-- CONTACT -->
