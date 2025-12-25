@@ -8,16 +8,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO -->
-<meta name="description" content="Mishu Creation offers digital invitations, greeting cards and professional poster designs for wedding, birthday, business and social media. Order online via WhatsApp.">
-<meta name="keywords" content="digital invitation, wedding invitation, birthday card, poster design, graphic design India, Mishu Creation">
+<meta name="description" content="Mishu Creation offers digital invitations, greeting cards and professional poster designs for wedding, birthday, business and social media.">
+<meta name="keywords" content="digital invitation, wedding invitation, birthday card, poster design, graphic design India">
 <meta name="author" content="Mishu Creation">
-<meta name="google-site-verification" content="tXK9s2bwyPjZcWzfnq380cv6J3NqHHa0XPB13oFX2Ng" />
+
+<!-- GOOGLE VERIFICATION (DO NOT REMOVE) -->
+<meta name="google-site-verification" content="tXK9s2bwyPjZcWzfq38cvc6J3NqHHa0XPB13oFX2Ng" />
+
 <!-- SOCIAL PREVIEW -->
 <meta property="og:title" content="Mishu Creation – Digital Invitation & Creative Design">
-<meta property="og:description" content="Wedding, Birthday Invitations & Professional Poster Designs. Order now on WhatsApp.">
+<meta property="og:description" content="Wedding, Birthday Invitations & Professional Poster Designs">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mishucreation.in">
 <meta property="og:image" content="https://mishucreation.in/poster1.png">
+
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="logo.png">
 
 <style>
 body {
@@ -28,21 +34,32 @@ body {
 }
 
 /* HEADER */
-header {
+.site-header {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: white;
-  padding: 60px 20px;
+  padding: 50px 20px;
   text-align: center;
 }
-header h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
-header p {
+.logo-wrap img {
+  height: 60px;
+}
+.logo-wrap h1 {
+  font-size: 34px;
+  margin: 0;
+}
+.site-header p {
+  margin-top: 10px;
   font-size: 18px;
 }
 
-/* SECTIONS */
+/* SECTION */
 section {
   padding: 50px 20px;
   max-width: 1000px;
@@ -61,7 +78,7 @@ section {
   gap: 20px;
 }
 .card {
-  background: #fff;
+  background: white;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
@@ -88,8 +105,6 @@ section {
 .more {
   display: none;
 }
-
-/* BUTTON */
 #viewMoreBtn {
   display: block;
   margin: 30px auto 0;
@@ -161,15 +176,14 @@ footer {
 
 <body>
 
-<!-- HERO -->
-<header>
-  <h1>Mishu Creation</h1>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo-wrap">
+    <img src="logo.png" alt="Mishu Creation Logo">
+    <h1>Mishu Creation</h1>
+  </div>
   <p>Digital Invitation • Greeting Cards • Creative Design</p>
 </header>
-
-<p style="text-align:center; color:#666; font-size:14px; margin-top:15px;">
-Trusted by clients for creative digital invitations & professional designs across India.
-</p>
 
 <!-- SERVICES -->
 <section>
@@ -193,19 +207,16 @@ Trusted by clients for creative digital invitations & professional designs acros
 <!-- PORTFOLIO -->
 <section>
   <h2 class="section-title">Portfolio</h2>
-
   <div class="portfolio">
     <img src="poster1.png" onclick="openLightbox(this.src)">
     <img src="poster2.png" onclick="openLightbox(this.src)">
     <img src="poster3.png" onclick="openLightbox(this.src)">
     <img src="poster4.png" onclick="openLightbox(this.src)">
-
     <img class="more" src="poster5.png" onclick="openLightbox(this.src)">
     <img class="more" src="poster6.png" onclick="openLightbox(this.src)">
     <img class="more" src="poster7.png" onclick="openLightbox(this.src)">
     <img class="more" src="poster8.png" onclick="openLightbox(this.src)">
   </div>
-
   <button id="viewMoreBtn" onclick="showMore()">View More</button>
 </section>
 
@@ -213,7 +224,7 @@ Trusted by clients for creative digital invitations & professional designs acros
 <section>
   <div class="cta">
     <h2>Ready to Order?</h2>
-    <p>Contact us directly on WhatsApp for quick response.</p>
+    <p>Contact us directly on WhatsApp</p>
     <a href="https://wa.me/917908928892" target="_blank">Chat on WhatsApp</a>
   </div>
 </section>
@@ -234,12 +245,10 @@ function showMore() {
   document.querySelectorAll('.more').forEach(img => img.style.display = 'block');
   document.getElementById('viewMoreBtn').style.display = 'none';
 }
-
 function openLightbox(src) {
   document.getElementById("lightboxImg").src = src;
   document.getElementById("lightbox").style.display = "flex";
 }
-
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
